@@ -1,0 +1,28 @@
+{
+  "name": "musik-server",
+  "version": "1.0.0",
+  "description": "Youtube music download made using NodeJS, Ionic 2 and Angular 2",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Qayou/musik-server.git"
+  },
+  "author": "Qayou",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Qayou/musik-server/issues"
+  },
+  "homepage": "https://github.com/Qayou/musik-server#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "youtube-node": "^1.3.0",
+    "ytdl-core": "^0.7.18"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.1.2"
+  }
+}
