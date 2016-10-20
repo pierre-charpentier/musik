@@ -1,6 +1,6 @@
 var chai = require('chai');
 var expect = chai.expect;
-var ytSearch = require('../src/youtube-search.js');
+var ytSearch = require('../src/youtube-search');
 
 describe('youtube-search.js', () => {
     describe('#search', () => {
