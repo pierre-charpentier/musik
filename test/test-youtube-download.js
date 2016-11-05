@@ -9,7 +9,7 @@ describe('youtube-download.js', () => {
         var path = '../downloads/';
         var videoId = 'lgT1AidzRWM';
         it('should create a mp3 file named with the video id', done => {
-            ytDownload.download(videoId, () => {
+            ytDownload.download(videoId, path, videoId, () => {
                 fs.exists(path + videoId + '.mp3', (exists) => {
                     try {
                         expect(exists).to.be.true;

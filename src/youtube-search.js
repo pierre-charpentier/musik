@@ -15,11 +15,11 @@ exports.search = (keywords, maxResults, callback) => {
                 return {
                     'id': item.id.videoId,
                     'title': item.snippet.title,
-                    'thumbnails': item.snippet.thumbnails
+                    'thumbnail': item.snippet.thumbnails.high || item.snippet.thumbnails.medium || item.snippet.thumbnails.default
                 };
             });
 
-            callback(items);
+            callback(undefined, items);
         }
     });
 };
