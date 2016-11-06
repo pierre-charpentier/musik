@@ -1,10 +1,14 @@
 {
   "name": "musik-server",
   "version": "1.0.0",
-  "description": "Youtube music download made using NodeJS, Ionic 2 and Angular 2",
+  "description": "Youtube music downloader made using NodeJS",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "watch": "nodemon index.js",
+    "build-scss": "node-sass --include-path scss scss -o public/css",
+    "watch-scss": "nodemon -e scss -x \"npm run build-scss\"",
+    "test": "mocha test"
   },
   "repository": {
     "type": "git",
@@ -23,6 +27,8 @@
   },
   "devDependencies": {
     "chai": "^3.5.0",
-    "mocha": "^3.1.2"
+    "mocha": "^3.1.2",
+    "node-sass": "^3.11.2",
+    "nodemon": "^1.11.0"
   }
 }
