@@ -7,6 +7,7 @@ yt.setKey(CONFIG.youtubeApiKey);
 module.exports = exports = {};
 
 exports.search = (keywords, maxResults, callback) => {
+    yt.addParam('type', 'video');
     yt.search(keywords, maxResults, (error, result) => {
         if (error) {
             callback(error);
