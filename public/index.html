@@ -5,20 +5,19 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="js/vendors/vue.min.js"></script>
     <script src="js/vendors/vue-resource.min.js"></script>
+    <script src="js/vendors/vue-focus.min.js"></script>
 </head>
 <body>
     <section id="search">
-        <form v-on:submit.prevent="search">
-            <input type="text" v-model="keywords">
-        </form>
+        <input type="text" v-model="keywords" v-on:keyup.enter="search" v-focus="true">
         <div class="items-container">
             <div v-for="item in items" class="item">
-                {{ item.title }}
+                <img v-bind:src="item.thumbnail.url" v-bind:alt="item.title">
+                <p class="item-info">{{ item.title }}</p>
                 <a v-bind:href="'download/' + item.id">{{ item.id }}</a>
             </div>
         </div>
     </section>
-    <div class="background-image"></div>
     <script src="js/script.js"></script>
 </body>
 </html>
