@@ -11,10 +11,7 @@ exports.getSoundStream = (videoId, callback) => {
     proc = new ffmpeg({ source: stream });
     proc.noVideo()
         .format('mp3')
-        .on('end', function () {
-            console.log(Math.floor(Date.now() / 1000), videoId + ' - ' + fileName + ' SUCCESS');
-        })
-        .on('error', function (err) {
+        .on('error', function(err) {
             console.log('youtube-download.js #download -> ffmpeg "error" event: ' + err.message);
         });
 
