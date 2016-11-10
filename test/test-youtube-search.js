@@ -6,7 +6,7 @@ describe('youtube-search.js', () => {
     describe('#search', () => {
         var savedResult;
         it('should return given number of results', done => {
-            ytSearch.search('Eminem', 3, (result) => {
+            ytSearch.search('Eminem', 3, (err, result) => {
                 try {
                     savedResult = result;
                     expect(result.length).to.equal(3);
@@ -25,7 +25,7 @@ describe('youtube-search.js', () => {
         });
 
         it('should contain video thumbnails', () => {
-            expect(savedResult[0].hasOwnProperty('thumbnails')).to.be.true;
+            expect(savedResult[0].hasOwnProperty('thumbnail')).to.be.true;
         });
     });
 });
