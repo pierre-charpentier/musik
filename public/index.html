@@ -5,7 +5,6 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="js/vendors/vue.min.js"></script>
     <script src="js/vendors/vue-resource.min.js"></script>
-    <script src="js/vendors/vue-focus.min.js"></script>
 </head>
 <body>
     <section id="search">
@@ -14,7 +13,7 @@
             <div v-for="item in items" class="item">
                 <img v-bind:src="item.thumbnail.url" v-bind:alt="item.title">
                 <p class="item-info">{{ item.title }}</p>
-                <a v-bind:href="'download/' + item.id">{{ item.id }}</a>
+                <a v-bind:href="'download/' + item.id">Download</a>
             </div>
         </div>
     </section>
