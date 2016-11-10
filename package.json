@@ -22,6 +22,7 @@
   "homepage": "https://github.com/Qayou/musik-server#readme",
   "dependencies": {
     "express": "^4.14.0",
+    "fluent-ffmpeg": "^2.1.0",
     "youtube-node": "^1.3.0",
     "ytdl-core": "^0.7.18"
   },
