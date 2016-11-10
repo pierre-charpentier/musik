@@ -1,2 +1,2 @@
 # musik
-Youtube music download made using NodeJS, Ionic 2 and Angular 2
+Youtube music download made using NodeJS, VueJS
