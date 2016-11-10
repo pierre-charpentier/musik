@@ -1,5 +1,6 @@
 * {
     outline: none;
+    font-family: Arial, sans-serif;
 }
 
 html,
@@ -9,10 +10,9 @@ body {
 }
 
 body {
-    width: 100vw;
-    height: 100vh;
     background-image: url('../img/yuri-background.jpg');
     background-size: cover;
+    background-attachment: fixed;
     box-sizing: border-box;
     &:after {
         content: "";
@@ -21,7 +21,7 @@ body {
         bottom: 0;
         left: 0;
         right: 0;
-        background: rgba(0, 0, 0, 0.8);
+        background: rgba(0, 0, 0, 0.5);
         pointer-events: none;
     }
     section {
@@ -41,20 +41,30 @@ body {
             margin: 0 auto;
         }
         .items-container {
+            padding: 0 5% 30px;
+            display: -moz-flex;
+            display: -webkit-flex;
             display: flex;
+            -moz-flex-flow: row wrap;
+            -webkit-flex-flow: row wrap;
+            flex-flow: row wrap;
+            -moz-justify-content: space-around;
+            -webkit-justify-content: space-around;
             justify-content: space-around;
-            flex-direction: row;
-            flex-wrap: wrap;
-            /*width: 100%;*/
             .item {
-                width: 300px;
-                border: 1px solid white;
-                border-radius: 5px;
-                color: white;
                 margin: 20px 5px;
+                color: white;
+                font-weight: bold;
+                -moz-flex: 0 0 200px;
+                -webkit-flex: 0 0 200px;
+                flex: 0 0 300px;
+                background-color: rgba(0, 0, 0, .7);
+                padding: 10px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
                 img {
                     width: 100%;
-                    /*border-radius: 5px;*/
                 }
             }
         }
