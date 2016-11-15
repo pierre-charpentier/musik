@@ -8,8 +8,8 @@ var ffmpeg = require('fluent-ffmpeg');
 app.use(express.static('public'));
 
 app.get('/download/:videoId', (req, res) => {
-    ytDownload.getSoundStream(req.params.videoId, (soundStream) => {
-        res.attachment(req.params.videoId + '.mp3');
+    ytDownload.getSoundStream(req.params.videoId, (soundStream, videoTitle) => {
+        res.attachment(videoTitle + '.mp3');
         soundStream.writeToStream(res, {end: true});
     });
 });
