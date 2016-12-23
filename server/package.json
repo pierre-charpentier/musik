@@ -6,8 +6,6 @@
   "scripts": {
     "start": "node index.js",
     "watch": "nodemon index.js",
-    "build-scss": "node-sass --include-path scss scss -o public/css",
-    "watch-scss": "nodemon -e scss -x \"npm run build-scss\"",
     "test": "mocha test"
   },
   "repository": {

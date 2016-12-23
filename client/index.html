@@ -16,7 +16,7 @@
             <div v-for="item in items" class="item">
                 <img v-bind:src="item.thumbnail.url" v-bind:alt="item.title">
                 <p class="item-info">{{ item.title }}</p>
-                <a class="item-download-link" v-bind:href="'download/' + item.id"><i class="fa fa-download" aria-hidden="true"></i></a>
+                <a class="item-download-link" v-bind:href="'http://localhost:3000/download/' + item.id"><i class="fa fa-download" aria-hidden="true"></i></a>
             </div>
         </div>
     </section>

@@ -4,8 +4,9 @@ var express = require('express');
 var app = express();
 var fs = require ('fs')
 var ffmpeg = require('fluent-ffmpeg');
+var cors = require('cors');
 
-app.use(express.static('public'));
+app.use(cors());
 
 app.get('/download/:videoId', (req, res) => {
     ytDownload.getSoundStream(req.params.videoId, (soundStream, videoTitle) => {

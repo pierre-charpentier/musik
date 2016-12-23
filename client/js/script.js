@@ -6,7 +6,7 @@ var searchResult = new Vue({
     },
     methods: {
         search: function () {
-            this.$http.get("search/" + this.keywords).then(function (response) {
+            this.$http.get("http://localhost:3000/search/" + this.keywords).then(function (response) {
                 this.items = response.body;
             }, function (response) {
                 console.log("error");
