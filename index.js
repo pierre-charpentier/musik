@@ -2,8 +2,8 @@ require('dotenv').config()
 const express = require('express')
 const app = express()
 
-const youtubeDownload = require('./src/youtube-download')
-const youtubeSearch = require('./src/youtube-search')
+const youtubeDownload = require('./src/youtube/youtube-download')
+const youtubeSearch = require('./src/youtube/youtube-search')
 
 app.set('port', process.env.MUSIK_PORT)
 
