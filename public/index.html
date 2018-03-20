@@ -5,10 +5,13 @@
     <title>Musik</title>
     <link rel="stylesheet" href="css/vendors/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/vendors/vue.min.js"></script>
-    <script src="js/vendors/vue-resource.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Molengo" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-resource"></script>
 </head>
-
+<header>
+    <h1 class="app-title">MUSI&#408;</h1>
+</header>
 <body>
     <section id="search">
         <input type="text" v-model="keywords" v-on:keyup.enter="search" v-focus="true">
@@ -16,7 +19,7 @@
             <div v-for="item in items" class="item">
                 <img v-bind:src="item.thumbnail.url" v-bind:alt="item.title">
                 <p class="item-info">{{ item.title }}</p>
-                <a class="item-download-link" v-bind:href="'http://localhost:3000/download/' + item.id"><i class="fa fa-download" aria-hidden="true"></i></a>
+                <a class="item-download-link" v-bind:href="'/download/' + item.id"><i class="fa fa-download" aria-hidden="true"></i></a>
             </div>
         </div>
     </section>
