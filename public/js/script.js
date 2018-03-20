@@ -8,10 +8,10 @@ const searchResult = new Vue({
   },
   methods: {
     search: function () {
-      this.$http.get(`/search/${this.keywords}`).then(function (response) {
+      this.$http.get(`/search/${this.keywords}`).then((response) => {
         this.items = response.body
-      }, function (response) {
-        console.log('error')
+      }, () => {
+        console.error('Request to search endpoint failed.')
       })
     }
   }
