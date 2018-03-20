@@ -1,22 +1,22 @@
-var ytDownload = require('../src/youtube-download');
-var chai = require('chai');
-var expect = chai.expect;
-var fs = require('fs');
+/* global it, describe */
 
-var assert = chai.assert;
+const youtubeDownload = require('../src/youtube/youtube-download')
+const chai = require('chai')
+
+const assert = chai.assert
 
 describe('youtube-download.js', () => {
-    describe('#getSoundStream', () => {
-        var videoId = 'lgT1AidzRWM';
-        it('should return a stream', done => {
-            ytDownload.getSoundStream(videoId, (stream) => {
-                try {
-                    expect(typeof stream.on === 'function').to.be.true;
-                    done();
-                } catch (e) {
-                    done(e);
-                }
-            });
-        });
-    });
-});
+  describe('#getSoundStream', () => {
+    var videoId = 'lgT1AidzRWM'
+    it('should return a stream', done => {
+      youtubeDownload.getSoundStream(videoId, (stream) => {
+        try {
+          assert.isOk(typeof stream.on === 'function', 'stream.on is not a function')
+          done()
+        } catch (e) {
+          done(e)
+        }
+      })
+    })
+  })
+})
