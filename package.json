@@ -6,7 +6,9 @@
   "scripts": {
     "start": "node index.js",
     "watch": "nodemon index.js",
-    "test": "mocha test"
+    "test": "mocha test",
+    "build-scss": "node-sass --include-path scss assets/scss -o public/css",
+    "watch-scss": "nodemon -e scss -x \"npm run build-scss\""
   },
   "repository": {
     "type": "git",
