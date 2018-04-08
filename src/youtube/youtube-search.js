@@ -6,9 +6,7 @@ const youtube = new Youtube()
 youtube.setKey(process.env.MUSIK_YT_API_KEY)
 
 const search = (keywords, maxResults, callback) => {
-  youtube.addParam('type', 'video')
-
-  youtube.search(keywords, maxResults, (error, result) => {
+  youtube.search(keywords, maxResults, { type: 'video' }, (error, result) => {
     if (error) {
       callback(error)
     } else {
