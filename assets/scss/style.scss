@@ -1,6 +1,9 @@
 * {
-    outline: none;
-    font-family: Arial, sans-serif;
+    font-family: 'Molengo', Arial, sans-serif;
+
+    :focus {
+        outline: 0;
+    }
 }
 
 html,
@@ -9,8 +12,20 @@ body {
     padding: 0;
 }
 
+header {
+    .app-title {
+        position: relative;
+        color: #EEE;
+        margin: 3rem 0 0;
+        text-align: center;
+        font-size: 3rem;
+        z-index: 999;
+        opacity: .6;
+    }
+}
+
 body {
-    background-image: url('../img/yuri-background.jpg');
+    background-image: url('https://source.unsplash.com/featured/?inspire,landscape');
     background-size: cover;
     background-attachment: fixed;
     box-sizing: border-box;
