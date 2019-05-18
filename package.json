@@ -1,5 +1,5 @@
 {
-  "name": "musik-server",
+  "name": "musik",
   "version": "1.0.0",
   "description": "Youtube music downloader made using NodeJS",
   "main": "index.js",
