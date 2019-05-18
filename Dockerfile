@@ -1,4 +1,4 @@
-FROM node:carbon
+FROM node:lts-alpine
 
 WORKDIR /usr/src/app
 
@@ -9,6 +9,8 @@ COPY . .
 RUN npm install
 
 RUN npm run build-scss
+
+RUN apk add ffmpeg
 
 EXPOSE 3000
 
