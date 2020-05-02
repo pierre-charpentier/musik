@@ -22,7 +22,7 @@ app.get('/download/:videoId', (req, res) => {
 app.get('/search/:keywords', (req, res) => {
   youtubeSearch.search(req.params.keywords, 9, (error, items) => {
     if (error) {
-      res.end('Couldn\'t retrieve items.')
+      res.end(`Couldn\'t retrieve items: ${JSON.stringify(error)}`)
     } else {
       res.type('json')
       res.end(JSON.stringify(items))
@@ -30,6 +30,6 @@ app.get('/search/:keywords', (req, res) => {
   })
 })
 
-app.listen(3000, () => {
+app.listen(8080, () => {
   console.log('Listening!')
 })
