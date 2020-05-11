@@ -1,0 +1,21 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 25px;
+  row-gap: 25px;
+  max-width: 100vw;
+  padding: 0 50px 0 50px;
+  justify-content: space-evenly;
+}
+
+@media only screen and (min-width: 1025px) {
+  .grid {
+    grid-template-columns: repeat(5, 1fr);
+    column-gap: 50px;
+    row-gap: 50px;
+  }
+}
+
+.card {
+  min-width: 0;
+}

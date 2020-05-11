@@ -1,21 +1,29 @@
-FROM node:lts-alpine
+# Web app
+FROM node:lts-alpine AS webapp
 
-WORKDIR /usr/src/app
+WORKDIR /tmp/webapp
 
-ARG MUSIK_YT_API_KEY
+COPY src/frontend .
 
-ENV MUSIK_YT_API_KEY=$MUSIK_YT_API_KEY
+RUN npm install
+RUN npm run build
+
+# Server
+FROM node:lts-alpine AS server
+
+WORKDIR /tmp/server
 
 RUN npm install -g fluent-ffmpeg
+RUN apk add ffmpeg
 
-COPY . .
+COPY src/backend .
+COPY --from=webapp /tmp/webapp/build public
+
+RUN ls public
 
 RUN npm install
 
-RUN npm run build-scss
-
-RUN apk add ffmpeg
-
-EXPOSE 8080/tcp
+ARG MUSIK_YT_API_KEY
+ENV MUSIK_YT_API_KEY=$MUSIK_YT_API_KEY
 
 CMD [ "npm", "start" ]

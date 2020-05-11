@@ -1,20 +1,47 @@
 version: 2.1
 
 jobs:
-  build:
-    docker: # run the steps with Docker
+  build_webapp:
+    docker:
       - image: circleci/node:lts
     steps:
       - checkout
       - run:
-          name: update-npm
-          command: 'sudo npm install -g npm@latest'
+          name: Web app
+          command: |
+            cd src/frontend
+            npm install
+            npm run build
+  test_webapp:
+    docker:
+      - image: circleci/node:lts
+    steps:
+      - checkout
       - run:
-          name: npm-install
-          command: npm install
+          name: Web app
+          command: |
+            cd src/frontend
+            npm install
+            npm test
+  test_server:
+    docker:
+      - image: circleci/node:lts
+    steps:
+      - checkout
       - run:
-          name: build-scss
-          command: npm run build-scss
-      - run:
-          name: npm-test
-          command: npm test
+          name: Server
+          command: |
+            cd src/backend
+            npm install
+            npm test
+workflows:
+  version: 2
+  build-test:
+    jobs:
+      - build_webapp
+      - test_webapp:
+          requires:
+            - build_webapp
+      - test_server:
+          requires:
+            - build_webapp
