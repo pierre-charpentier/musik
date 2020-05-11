@@ -12,11 +12,7 @@ export const VideoCard = ({
   videoTitle: string;
   videoThumbnail: { url: string; height: number; width: number };
 }) => {
-  const download = async (videoId: string) => {
-    const response = await fetch(`/download/${videoId}`);
-
-    window.location.href = response.url;
-  };
+  const title = new DOMParser().parseFromString(videoTitle, "text/html");
 
   return (
     <div className={classes.card}>
@@ -26,13 +22,14 @@ export const VideoCard = ({
           alt={`Thumbnail of the video: ${videoTitle}`}
           className={classes.thumbnail}
         />
-        <FontAwesomeIcon
+        <a
+          href={`/download/${videoId}`}
+          type="application/data"
+          download
           className={classes.downloadButton}
-          icon={faDownload}
-          onClick={() => {
-            download(videoId);
-          }}
-        />
+        >
+          <FontAwesomeIcon icon={faDownload} />
+        </a>
       </div>
       <a
         className={classes.title}
@@ -41,7 +38,7 @@ export const VideoCard = ({
         target="_blank"
         title={videoTitle}
       >
-        {videoTitle}
+        {title.querySelector("body")?.innerText}
       </a>
     </div>
   );
